@@ -1,1 +1,31 @@
-<p>chat works!</p>
+<div class="container-fluid" *ngIf="showScreen">
+    <ng-container>
+        <div *ngFor="let item of messageArray">
+            <p>{{item?.message}}</p>
+        </div>
+    </ng-container>
+    <ng-container>
+        <div class="row">
+            <input type="text" #msg>
+            <button (click)="sendMessage(msg.value)">Send</button>
+        </div>
+    </ng-container>
+</div>
+
+<ng-template #popup let d= "dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Login</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="tel" #phone>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button (click)="login(d,phone.value)">Login</button>
+    </div>
+</ng-template>

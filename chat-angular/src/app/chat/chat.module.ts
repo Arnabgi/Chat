@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChatRoutingModule } from './chat-routing.module';
 import { ChatComponent } from './Components/chat/chat.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ChatComponent } from './Components/chat/chat.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ChatRoutingModule
   ]
 })
